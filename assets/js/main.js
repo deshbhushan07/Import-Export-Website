@@ -1,11 +1,12 @@
-// assets/js/main.js (replace existing file)
+// assets/js/main.js
+// Loads products.json and renders product listings and details
+// Works for pages at repo root and inside /products/
 
-// --- loadProducts: try relative candidates ---
 async function loadProducts() {
   const candidates = [
-    'data/products.json',       // typical for root pages
+    'data/products.json',
     './data/products.json',
-    '../data/products.json'     // if called from pages/products/
+    '../data/products.json'
   ];
 
   for (const path of candidates) {
@@ -22,28 +23,23 @@ async function loadProducts() {
   return [];
 }
 
-// --- helper: determine base path for asset resolution ---
 function assetBasePath() {
-  // If current pathname includes '/products/' we need to go up one level
   const path = window.location.pathname || '';
-  // For GitHub pages the repo name might be present; check for '/products/'
+  // if the URL includes '/products/' we need to go up one level for assets
   if (path.includes('/products/')) return '../';
-  // otherwise root
   return '';
 }
 
-// --- create a product card, resolving image path properly ---
 function createProductCard(p){
-  const base = assetBasePath();             // '' or '../'
-  // Ensure we point to assets/img/<filename>
-  const safeImage = String(p.image || '').replace(/^\/+/, ''); // remove leading slash if any
+  const base = assetBasePath();
+  const safeImage = String(p.image || '').replace(/^\/+/, '');
   const imgSrc = `${base}assets/img/${safeImage}`;
 
   const div = document.createElement('div');
   div.className = 'col-md-4';
   div.innerHTML = `
     <div class="card p-3 h-100">
-      <img src="${imgSrc}" alt="${p.name}" class="product-img mb-3 w-100" loading="lazy">
+      <img src="${imgSrc}" alt="${p.name}" class="product-img mb-3 w-100" loading="lazy" onerror="this.onerror=null;this.src='${base}assets/img/placeholder.png';console.error('Image load failed:', '${imgSrc}');">
       <h5>${p.name}</h5>
       <div class="mb-2"><span class="badge-cat">${p.category}</span></div>
       <p class="mb-2 text-truncate">${p.description}</p>
@@ -116,7 +112,7 @@ async function renderProductDetail(){
 
   container.innerHTML = `
     <div class="col-md-6">
-      <img src="${imgSrc}" alt="${p.name}" class="product-img w-100 mb-3" loading="lazy">
+      <img src="${imgSrc}" alt="${p.name}" class="product-img w-100 mb-3" loading="lazy" onerror="this.onerror=null;this.src='${base}assets/img/placeholder.png';console.error('Image load failed:', '${imgSrc}');">
     </div>
     <div class="col-md-6">
       <h1>${p.name}</h1>
@@ -126,12 +122,11 @@ async function renderProductDetail(){
       <p><strong>Packaging:</strong> ${p.packaging || 'Standard'}</p>
       <p><strong>Minimum Order Qty:</strong> ${p.moq || 'Contact for MOQ'}</p>
       <p><strong>Certifications:</strong> ${p.certifications ? p.certifications.join(', ') : 'N/A'}</p>
-      <a class="btn btn-primary" href="../contact.html">Request Quote</a>
+      <a class="btn btn-primary" href="${base}contact.html">Request Quote</a>
     </div>
   `;
 }
 
-// initialize
 document.addEventListener('DOMContentLoaded', async () => {
   await renderFeatured();
   await renderProductList();
