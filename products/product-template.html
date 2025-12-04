@@ -2,18 +2,26 @@
 <html lang="en">
 <head>
   <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Product Details — AC Global Trade</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Product Details — ARC International Seva</title>
+  <meta name="description" content="Product details — ARC International Seva" />
   <link rel="stylesheet" href="../assets/css/styles.css" />
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
 </head>
 <body>
-  <header class="navbar navbar-expand-lg navbar-light bg-white shadow-sm">
+  <header class="site-header navbar navbar-expand-lg navbar-light bg-white shadow-sm">
     <div class="container">
-      <a class="navbar-brand fw-bold" href="../index.html">AC Global Trade</a>
+      <a class="navbar-brand d-flex align-items-center" href="../index.html">
+        <img src="../assets/img/logo.png" alt="ARC International Seva" style="height:72px; width:auto; margin-right:10px;">
+        <span class="brand-text">
+          <strong>ARC</strong> <small class="d-block" style="line-height:1;">International Seva</small>
+        </span>
+      </a>
+
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#nav">
         <span class="navbar-toggler-icon"></span>
       </button>
+
       <nav id="nav" class="collapse navbar-collapse">
         <ul class="navbar-nav ms-auto">
           <li class="nav-item"><a class="nav-link" href="index.html">Products</a></li>
@@ -31,12 +39,12 @@
 
   <footer class="bg-dark text-light py-4">
     <div class="container text-center">
-      <small>© <span id="yearpt"></span> AC Global Trade</small>
+      <small>© <span id="yearpt"></span> ARC International Seva</small>
     </div>
   </footer>
 
-  <script src="../assets/js/main.js"></script>
   <script>document.getElementById('yearpt').textContent = new Date().getFullYear();</script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="../assets/js/main.js"></script>
 </body>
 </html>
