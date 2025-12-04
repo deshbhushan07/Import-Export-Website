@@ -1,38 +1,55 @@
-// assets/js/main.js
-// Lightweight site JS to load product data and render pages
+// assets/js/main.js (replace existing file)
 
+// --- loadProducts: try relative candidates ---
 async function loadProducts() {
-  try {
-    const res = await fetch('/data/products.json');
-    if (!res.ok) throw new Error('Failed to fetch products.json');
-    const products = await res.json();
-    return products;
-  } catch (err) {
-    // Try relative fallback if hosted from subfolder (GitHub Pages)
+  const candidates = [
+    'data/products.json',       // typical for root pages
+    './data/products.json',
+    '../data/products.json'     // if called from pages/products/
+  ];
+
+  for (const path of candidates) {
     try {
-      const res2 = await fetch('../data/products.json');
-      if (!res2.ok) throw err;
-      const products2 = await res2.json();
-      return products2;
-    } catch (e) {
-      console.error('Could not load products.json', e);
-      return [];
+      const res = await fetch(path);
+      if (!res.ok) throw new Error('not ok');
+      const products = await res.json();
+      return products;
+    } catch (err) {
+      // try next candidate
     }
   }
+  console.error('Could not load products.json from any path.');
+  return [];
 }
 
+// --- helper: determine base path for asset resolution ---
+function assetBasePath() {
+  // If current pathname includes '/products/' we need to go up one level
+  const path = window.location.pathname || '';
+  // For GitHub pages the repo name might be present; check for '/products/'
+  if (path.includes('/products/')) return '../';
+  // otherwise root
+  return '';
+}
+
+// --- create a product card, resolving image path properly ---
 function createProductCard(p){
+  const base = assetBasePath();             // '' or '../'
+  // Ensure we point to assets/img/<filename>
+  const safeImage = String(p.image || '').replace(/^\/+/, ''); // remove leading slash if any
+  const imgSrc = `${base}assets/img/${safeImage}`;
+
   const div = document.createElement('div');
   div.className = 'col-md-4';
   div.innerHTML = `
     <div class="card p-3 h-100">
-      <img src="${p.image}" alt="${p.name}" class="product-img mb-3 w-100">
+      <img src="${imgSrc}" alt="${p.name}" class="product-img mb-3 w-100" loading="lazy">
       <h5>${p.name}</h5>
       <div class="mb-2"><span class="badge-cat">${p.category}</span></div>
       <p class="mb-2 text-truncate">${p.description}</p>
       <div class="d-flex justify-content-between align-items-center">
         <div class="product-price">₹ ${p.price}</div>
-        <a href="product-template.html?id=${p.id}" class="btn btn-outline-primary btn-sm">View</a>
+        <a href="${base}products/product-template.html?id=${p.id}" class="btn btn-outline-primary btn-sm">View</a>
       </div>
     </div>
   `;
@@ -43,7 +60,6 @@ async function renderFeatured(){
   const featuredEl = document.getElementById('featured');
   if(!featuredEl) return;
   const products = await loadProducts();
-  // pick unique categories instead of items: show first 3 categories
   const categories = [];
   for(const p of products){
     if(!categories.includes(p.category)) categories.push(p.category);
@@ -93,9 +109,14 @@ async function renderProductDetail(){
     container.innerHTML = `<div class="col-12"><div class="alert alert-warning">Product not found. <a href="index.html">Back to products</a></div></div>`;
     return;
   }
+
+  const base = assetBasePath();
+  const safeImage = String(p.image || '').replace(/^\/+/, '');
+  const imgSrc = `${base}assets/img/${safeImage}`;
+
   container.innerHTML = `
     <div class="col-md-6">
-      <img src="${p.image}" alt="${p.name}" class="product-img w-100 mb-3">
+      <img src="${imgSrc}" alt="${p.name}" class="product-img w-100 mb-3" loading="lazy">
     </div>
     <div class="col-md-6">
       <h1>${p.name}</h1>
@@ -110,7 +131,7 @@ async function renderProductDetail(){
   `;
 }
 
-// Initialize appropriate renders depending on the page
+// initialize
 document.addEventListener('DOMContentLoaded', async () => {
   await renderFeatured();
   await renderProductList();
