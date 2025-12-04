@@ -1,68 +1,75 @@
 <!doctype html>
 <html lang="en">
 <head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>ARC International Seva — Import · Export · Logistics</title>
-<meta name="description" content="ARC International Seva — Trusted import & export solutions, logistics, and global sourcing. Contact us for quotes." />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-
+  <meta name="description" content="ARC International Seva — Trusted import & export solutions, logistics, and global sourcing." />
   <link rel="stylesheet" href="assets/css/styles.css" />
-  <!-- Optional: Bootstrap CDN for quick layout -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
 </head>
 <body>
+  <!-- header -->
   <header class="site-header navbar navbar-expand-lg navbar-light bg-white shadow-sm">
-  <div class="container">
-    <a class="navbar-brand d-flex align-items-center" href="index.html">
-      <img src="assets/img/logo.png" alt="ARC International Seva"
-     style="height:90px; width:auto; margin-right:10px;" />
+    <div class="container">
+      <a class="navbar-brand d-flex align-items-center" href="index.html">
+        <img src="assets/img/logo.png" alt="ARC International Seva" style="height:90px; width:auto; margin-right:12px;">
+        <span class="brand-text">
+          <strong>ARC</strong> <small class="d-block" style="line-height:1;">International Seva</small>
+        </span>
+      </a>
 
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#nav" aria-controls="nav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
 
-      <span class="brand-text">
-        <strong>ARC</strong> <small class="d-block" style="line-height:1;">International Seva</small>
-      </span>
-    </a>
+      <nav id="nav" class="collapse navbar-collapse">
+        <ul class="navbar-nav ms-auto align-items-lg-center">
+          <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+          <li class="nav-item"><a class="nav-link" href="products/index.html">Products</a></li>
+          <li class="nav-item"><a class="nav-link" href="services.html">Services</a></li>
+          <li class="nav-item"><a class="nav-link btn btn-sm btn-primary text-white ms-lg-3" href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
 
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#nav" aria-controls="nav" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
+  <main class="container">
+    <!-- optional big logo hero -->
+    <section class="hero-logo text-center my-4">
+      <img src="assets/img/logo.png" alt="ARC International Seva Logo" class="hero-logo-img">
+    </section>
 
-    <nav id="nav" class="collapse navbar-collapse">
-      <ul class="navbar-nav ms-auto align-items-lg-center">
-        <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
-        <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
-        <li class="nav-item"><a class="nav-link" href="products/index.html">Products</a></li>
-        <li class="nav-item"><a class="nav-link" href="services.html">Services</a></li>
-        <li class="nav-item"><a class="nav-link btn btn-sm btn-primary text-white ms-lg-3" href="contact.html">Contact</a></li>
-      </ul>
-    </nav>
-  </div>
-</header>
-
-
-  <main class="container py-5">
-    <section class="hero text-center">
-      <h1>Reliable Import & Export Solutions</h1>
-      <p class="lead">Showcasing products, certifications, and global trade services.</p>
+    <section class="hero text-center mb-5">
+      <h1 class="display-5">Reliable Import & Export Solutions</h1>
+      <p class="lead">Connecting quality suppliers with global buyers — sourcing, logistics, and documentation simplified.</p>
       <a href="contact.html" class="btn btn-primary">Request a Quote</a>
     </section>
 
-    <!-- Featured products / categories -->
-    <section class="mt-5">
-      <h2>Featured Categories</h2>
-      <div id="featured" class="row">
-        <!-- Insert cards for categories (handicrafts, groceries, packaging...) -->
+    <section class="mb-5">
+      <div class="d-flex justify-content-between align-items-center mb-3">
+        <h2 class="h4">Featured Categories</h2>
+        <a href="products/index.html" class="small">View all products →</a>
+      </div>
+      <div id="featured" class="row gy-4">
+        <!-- JS will insert featured category cards here -->
       </div>
     </section>
   </main>
 
-  <footer class="bg-dark text-light py-3">
-    <div class="container">
-      <small>© <span id="year"></span> AC Global Trade. All rights reserved.</small>
+  <footer class="bg-dark text-light py-4 mt-5">
+    <div class="container d-flex flex-column flex-md-row justify-content-between align-items-center">
+      <small>© <span id="year"></span> ARC International Seva</small>
+      <div class="mt-2 mt-md-0">
+        <a href="#" class="text-light text-decoration-none me-3">Privacy</a>
+        <a href="#" class="text-light text-decoration-none">Terms</a>
+      </div>
     </div>
   </footer>
 
+  <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
   <script src="assets/js/main.js"></script>
-  <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
 </body>
 </html>
