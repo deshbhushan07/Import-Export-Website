@@ -1,22 +1,15 @@
-# AC Global Trade — Import & Export Website
+# ARC International Seva — Import & Export Website
 
-**Why this repository exists**
+This repository contains a responsive static website for **ARC International Seva** (Import · Export · Logistics). Built to showcase services, product catalogs, and contact details; made for deployment on GitHub Pages.
 
-This repository contains a responsive static website for an import–export business. I built it to:
-- Create an online presence to present company information and product catalogs.
-- Practice and demonstrate frontend development skills (HTML, CSS, vanilla JS, Bootstrap).
-- Keep product data and site content versioned in GitHub and deploy via GitHub Pages.
-
-## What’s inside
+## Files
 - `index.html`, `about.html`, `services.html`, `contact.html`
-- `products/` — product listing and product detail template
-- `assets/` — CSS, JS, images
+- `products/` — `index.html`, `product-template.html`
+- `assets/` — `css/`, `js/`, `img/`
 - `data/products.json` — product data used by the site
 
 ## How to run locally
-1. Clone the repo.
-2. Serve the folder with a static server (recommended). Example:
-   ```bash
-   # using Python 3
-   python -m http.server 8000
-   # open http://localhost:8000 in your browser
+```bash
+# from repo root
+python -m http.server 8000
+# then open http://localhost:8000
