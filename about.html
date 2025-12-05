@@ -3,82 +3,59 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>About — ARC International Seva</title>
-  <meta name="description" content="About ARC International Seva — import, export and logistics services." />
+  <title>About — International Seva</title>
   <link rel="stylesheet" href="assets/css/styles.css" />
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/img/logo.png">
 </head>
 <body>
+
+  <!-- HEADER (same as index) -->
   <header class="site-header navbar navbar-expand-lg navbar-light shadow-sm">
-  <div class="container">
-    <a class="navbar-brand d-flex align-items-center" href="index.html">
-      <img src="assets/img/logo.png" alt="ARC International Seva" />
-      <span class="brand-text ms-2">
-        <strong>ARC</strong>
-        <small class="d-block" style="line-height:1;">International Seva</small>
-      </span>
-    </a>
+    <div class="container">
+      <a class="navbar-brand d-flex align-items-center" href="index.html">
+        <img src="assets/img/logo.png" alt="ARC International Seva" class="brand-logo">
+        <span class="brand-title ms-2">INTERNATIONAL SEVA</span>
+      </a>
 
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-            data-bs-target="#nav" aria-controls="nav" aria-expanded="false"
-            aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+              data-bs-target="#nav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
 
-    <nav id="nav" class="collapse navbar-collapse">
-      <ul class="navbar-nav ms-auto align-items-lg-center">
-        <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
-        <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
-        <li class="nav-item"><a class="nav-link" href="products/index.html">Products</a></li>
-        <li class="nav-item"><a class="nav-link" href="services.html">Services</a></li>
-        <li class="nav-item">
-          <a class="nav-link btn btn-sm btn-primary text-white ms-lg-2" href="contact.html">
-            Contact
-          </a>
-        </li>
-      </ul>
-    </nav>
-  </div>
-</header>
+      <nav id="nav" class="collapse navbar-collapse justify-content-end">
+        <ul class="navbar-nav align-items-lg-center main-menu">
+          <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+          <li class="nav-item"><a class="nav-link" href="sourcing-agent.html">Sourcing Agent</a></li>
+          <li class="nav-item"><a class="nav-link" href="products/index.html">Products</a></li>
+          <li class="nav-item"><a class="nav-link" href="gallery.html">Gallery</a></li>
+          <li class="nav-item"><a class="nav-link" href="blog.html">Blog</a></li>
+          <li class="nav-item">
+            <a class="nav-link btn btn-sm btn-primary text-white ms-lg-2" href="contact.html">
+              Contact Us
+            </a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+  </header>
 
   <main class="container py-5">
-    <h1>About ARC International Seva</h1>
-    <p class="lead">Why I built this website:</p>
-
-    <div class="card p-3 mb-4">
-      <p class="mb-0">
-        I created this website for three reasons:
-        <ol>
-          <li><strong>Online presence:</strong> to showcase our import–export capabilities, products, and certifications to potential buyers.</li>
-          <li><strong>Learning & portfolio:</strong> to practice real-world frontend development and maintain a professional portfolio on GitHub.</li>
-          <li><strong>Documentation:</strong> to store product data and company details in a maintainable repository that can be updated and deployed via GitHub Pages.</li>
-        </ol>
-      </p>
-    </div>
-
-    <h3>Mission</h3>
-    <p>To make international trade simple, transparent, and reliable for buyers and suppliers by providing sourcing, logistics, and compliance support.</p>
+    <h1>About International Seva</h1>
+    <p>Write your company story, mission, and vision here.</p>
   </main>
 
- <footer class="bg-dark text-light mt-5">
-  <div class="container d-flex flex-column flex-md-row justify-content-between align-items-center">
-    <small>© <span id="year"></span> ARC International Seva</small>
-    <div class="mt-2 mt-md-0">
-      <a href="#" class="text-light text-decoration-none me-3">Privacy</a>
-      <a href="#" class="text-light text-decoration-none">Terms</a>
+  <footer class="bg-dark text-light mt-5">
+    <div class="container text-center">
+      <small>© <span id="year"></span> International Seva</small>
     </div>
-  </div>
-</footer>
+  </footer>
 
-<script>
-  // if multiple pages already set year, you can keep one or reuse this
-  const yearSpan = document.getElementById('year');
-  if (yearSpan) yearSpan.textContent = new Date().getFullYear();
-</script>
-
-
-  <script>document.getElementById('year2').textContent = new Date().getFullYear();</script>
+  <script>
+    const yearSpan = document.getElementById('year');
+    if (yearSpan) yearSpan.textContent = new Date().getFullYear();
+  </script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-  <script src="assets/js/main.js"></script>
 </body>
 </html>
