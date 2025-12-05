@@ -79,11 +79,22 @@
     </div>
   </main>
 
-  <footer class="bg-dark text-light py-4">
-    <div class="container text-center">
-      <small>© <span id="year4"></span> ARC International Seva</small>
+  <footer class="bg-dark text-light mt-5">
+  <div class="container d-flex flex-column flex-md-row justify-content-between align-items-center">
+    <small>© <span id="year"></span> ARC International Seva</small>
+    <div class="mt-2 mt-md-0">
+      <a href="#" class="text-light text-decoration-none me-3">Privacy</a>
+      <a href="#" class="text-light text-decoration-none">Terms</a>
     </div>
-  </footer>
+  </div>
+</footer>
+
+<script>
+  // if multiple pages already set year, you can keep one or reuse this
+  const yearSpan = document.getElementById('year');
+  if (yearSpan) yearSpan.textContent = new Date().getFullYear();
+</script>
+
 
   <script>
     document.getElementById('year4').textContent = new Date().getFullYear();
