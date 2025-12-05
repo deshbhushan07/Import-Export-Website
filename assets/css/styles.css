@@ -45,7 +45,7 @@ h1,h2,h3,h4,h5 {
 }
 
 .brand-logo {
-  height: 90px;          /* increase/decrease for bigger/smaller logo */
+  height: 150px;          /* increase/decrease for bigger/smaller logo */
   width: auto;
 }
 
