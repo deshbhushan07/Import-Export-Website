@@ -1,35 +1,106 @@
 [
   {
     "id": 1,
-    "name": "Handwoven Jute Basket",
-    "category": "Handicrafts",
-    "description": "Eco-friendly, handwoven jute baskets suitable for retail and wholesale orders. Durable and natural finish.",
-    "image": "jute-basket.jpg",
-    "price": 250,
-    "packaging": "Plastic-wrapped, carton packaging",
-    "moq": "100 pieces",
-    "certifications": ["ISO 9001"]
+    "name": "Premium Mango Pulp",
+    "category": "food-products",
+    "description": "100% pure Alphonso mango pulp, perfect for juices, desserts, and food processing.",
+    "price": 4.50,
+    "image": "mango-pulp.jpeg",
+    "specs": {
+      "packing": "As per buyer's requirement",
+      "shelf_life": "12 months",
+      "origin": "Maharashtra, India"
+    }
   },
   {
     "id": 2,
-    "name": "Premium Mango Pulp (Aseptic)",
-    "category": "Grocery",
-    "description": "Aseptic mango pulp for juices, desserts and food processing. Long shelf life, consistent quality.",
-    "image": "mango-pulp.jpeg",
-    "price": 1200,
-    "packaging": "200 kg drum / 1 L aseptic packs",
-    "moq": "1 metric ton",
-    "certifications": ["FSSAI", "HACCP"]
+    "name": "Handmade Jute Baskets",
+    "category": "handicraft",
+    "description": "Eco-friendly jute baskets with traditional Indian designs, perfect for home decor.",
+    "price": 8.75,
+    "image": "jute-basket.jpg",
+    "specs": {
+      "material": "100% Natural Jute",
+      "size": "Various sizes available",
+      "finish": "Handwoven"
+    }
   },
   {
     "id": 3,
-    "name": "Leather Wallet (Men)",
-    "category": "Leather",
-    "description": "Full grain leather wallets, stitched by skilled craftsmen. Available in brown and black.",
+    "name": "Genuine Leather Wallet",
+    "category": "leather-products",
+    "description": "Premium quality leather wallet with multiple compartments and RFID protection.",
+    "price": 22.99,
     "image": "leather-wallet.jpeg",
-    "price": 450,
-    "packaging": "Individual boxes",
-    "moq": "500 pieces",
-    "certifications": ["Export-Ready"]
+    "specs": {
+      "material": "Full Grain Leather",
+      "color": "Black, Brown, Tan",
+      "features": "RFID blocking, 12 card slots"
+    }
+  },
+  {
+    "id": 4,
+    "name": "Traditional Copper Utensils",
+    "category": "copper-products",
+    "description": "Handcrafted copper utensils with traditional designs and modern utility.",
+    "price": 45.00,
+    "image": "copper-utensils.jpg",
+    "specs": {
+      "material": "Pure Copper",
+      "finish": "Hand-polished",
+      "usage": "Kitchenware, Decor"
+    }
+  },
+  {
+    "id": 5,
+    "name": "Cotton Kurta Set",
+    "category": "garments",
+    "description": "Comfortable cotton kurta sets with traditional embroidery and modern designs.",
+    "price": 28.50,
+    "image": "cotton-kurta.jpg",
+    "specs": {
+      "fabric": "100% Cotton",
+      "sizes": "S, M, L, XL",
+      "washing": "Machine wash cold"
+    }
+  },
+  {
+    "id": 6,
+    "name": "Handmade Jewellery Set",
+    "category": "jewellery",
+    "description": "Traditional Indian jewellery set with semi-precious stones and intricate work.",
+    "price": 85.00,
+    "image": "jewellery-set.jpg",
+    "specs": {
+      "material": "Silver with Stones",
+      "type": "Necklace with Earrings",
+      "weight": "Approx 150g"
+    }
+  },
+  {
+    "id": 7,
+    "name": "Wooden Furniture",
+    "category": "furniture",
+    "description": "Solid wood furniture with traditional carvings and modern designs.",
+    "price": 350.00,
+    "image": "wooden-furniture.jpg",
+    "specs": {
+      "wood_type": "Sheesham Wood",
+      "finish": "Teak Polish",
+      "assembly": "Required"
+    }
+  },
+  {
+    "id": 8,
+    "name": "Eco-Friendly Packaging",
+    "category": "packaging-products",
+    "description": "Biodegradable packaging materials for sustainable business solutions.",
+    "price": 12.75,
+    "image": "packaging.jpg",
+    "specs": {
+      "material": "Recycled Paper",
+      "type": "Boxes and Bags",
+      "customizable": "Yes"
+    }
   }
 ]
