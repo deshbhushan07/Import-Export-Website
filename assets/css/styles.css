@@ -14,6 +14,13 @@
   --gradient: linear-gradient(135deg, var(--primary-color) 0%, #2c5282 100%);
 }
 
+/* Reset margins and padding to prevent white gaps */
+html, body {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -41,48 +48,104 @@ body {
   position: sticky;
   top: 0;
   z-index: 1000;
+  /* Ensure no white gap */
+  padding-top: 0;
+  margin-top: 0;
 }
 
+/* TOP BAR - COMPACT HEIGHT with solid dark background */
+/* TOP BAR FIX - Compact height with NO white backgrounds */
 .top-bar {
-  background: var(--gradient);
+  background: #2d3748; /* Solid dark color */
   color: var(--white);
-  padding: 10px 0;
-  font-size: 0.9rem;
+  padding: 3px 0; /* Very compact */
+  font-size: 0.75rem; /* Small text */
+  margin: 0;
+  height: 26px; /* Fixed compact height */
+  display: flex;
+  align-items: center;
+  width: 100%;
+  position: relative;
 }
 
 .top-bar-content {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  flex-wrap: wrap;
+  width: 100%;
 }
 
+/* CRITICAL FIX: Remove ALL background colors from contact items */
 .contact-info span {
-  margin-right: 25px;
+  margin-right: 15px;
   display: inline-flex;
   align-items: center;
+  color: #e2e8f0 !important; /* Force light color */
+  font-size: 0.75rem;
+  background: none !important; /* NO background */
+  background-color: transparent !important; /* NO background */
+  padding: 0 !important; /* NO padding */
+  border: none !important; /* NO borders */
+  box-shadow: none !important; /* NO shadows */
 }
 
 .contact-info i {
-  margin-right: 8px;
+  margin-right: 4px;
   color: var(--gold-color);
+  font-size: 0.7rem;
+  background: transparent !important;
+}
+
+/* CRITICAL FIX: Social links with NO backgrounds */
+.social-links {
+  display: flex;
+  align-items: center;
+  gap: 8px;
 }
 
 .social-links a {
   color: var(--white);
-  margin-left: 18px;
   text-decoration: none;
-  transition: var(--transition);
-  font-size: 16px;
+  font-size: 0.8rem;
+  background: none !important; /* NO background */
+  background-color: transparent !important; /* NO background */
+  padding: 0 !important; /* NO padding */
 }
 
 .social-links a:hover {
   color: var(--gold-color);
-  transform: translateY(-2px);
+}
+
+/* CRITICAL FIX: Date/time and language with NO backgrounds */
+.date-time, .language {
+  display: inline-flex;
+  align-items: center;
+  color: #e2e8f0 !important;
+  font-size: 0.7rem;
+  margin-left: 10px;
+  background: none !important; /* NO background */
+  background-color: transparent !important; /* NO background */
+  padding: 0 !important; /* NO padding */
+}
+
+.date-time i, .language i {
+  margin-right: 3px;
+  font-size: 0.7rem;
+  background: transparent !important;
+}
+
+.language {
+  cursor: pointer;
+}
+
+/* Add this to override ANY other styles that might add backgrounds */
+.top-bar * {
+  background-color: transparent !important;
+  background: none !important;
 }
 
 .main-header {
-  padding: 15px 0;
+  padding: 12px 0;
 }
 
 .header-content {
@@ -1181,6 +1244,42 @@ textarea.form-control {
 }
 
 @media (max-width: 768px) {
+  .top-bar {
+    height: 24px; /* Even more compact on mobile */
+    padding: 2px 0;
+  }
+  
+  .contact-info span {
+    margin-right: 10px;
+    font-size: 0.7rem;
+    display: none; /* Hide some info on mobile */
+  }
+  
+  .contact-info span:first-child {
+    display: inline-flex; /* Show only first item */
+  }
+  
+  .contact-info i {
+    font-size: 0.65rem;
+  }
+
+  .social-links {
+    gap: 6px;
+  }
+  
+  .social-links a {
+    font-size: 0.75rem;
+  }
+  
+  .date-time, .language {
+    font-size: 0.65rem;
+    margin-left: 8px;
+  }
+  
+  .date-time i, .language i {
+    font-size: 0.65rem;
+  }
+
   .hero h1 {
     font-size: 2.5rem;
   }
@@ -1196,29 +1295,30 @@ textarea.form-control {
   .section-padding {
     padding: 70px 0;
   }
-
-  .top-bar-content {
-    flex-direction: column;
-    gap: 10px;
-    text-align: center;
-  }
-
-  .contact-info span {
-    margin-right: 15px;
-    margin-bottom: 5px;
-    display: inline-block;
-  }
-
-  .social-links a {
-    margin: 0 10px;
-  }
-
-  .footer-content {
-    gap: 40px;
-  }
 }
 
 @media (max-width: 576px) {
+  .top-bar {
+    height: 22px; /* Minimal height on very small screens */
+    padding: 1px 0;
+  }
+  
+  .contact-info span {
+    font-size: 0.65rem;
+  }
+  
+  .contact-info i {
+    font-size: 0.6rem;
+  }
+  
+  .social-links a {
+    font-size: 0.7rem;
+  }
+  
+  .date-time, .language {
+    font-size: 0.6rem;
+  }
+
   .hero h1 {
     font-size: 2rem;
   }
@@ -1326,8 +1426,4 @@ textarea.form-control {
   background: #c53030;
   transform: translateY(-5px);
   box-shadow: 0 8px 25px rgba(229, 62, 62, 0.5);
-<<<<<<< HEAD
 }
-=======
-}
->>>>>>> 63922c4 (Initial commit)
