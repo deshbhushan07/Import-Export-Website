@@ -385,4 +385,8 @@ window.addEventListener('load', function() {
             },
         });
     }
+<<<<<<< HEAD
 });
+=======
+});
+>>>>>>> 63922c4 (Initial commit)
